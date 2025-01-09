@@ -1,0 +1,22 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+
+proxies:
+  - name: "MyProxy"
+    type: http
+    server: 117.62.203.183
+    port: 2018
+    username: "90101021"
+    password: "Njusc001@"
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "MyProxy"
+
+rules:
+  - MATCH,Proxy
